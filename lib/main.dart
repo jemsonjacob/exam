@@ -4,6 +4,7 @@ import 'package:testapp/screens/dashbaord_screen.dart';
 import 'package:testapp/screens/payment_screen.dart';
 import 'package:testapp/screens/splash_screen.dart';
 import 'package:testapp/screens/staff_screen.dart';
+import 'package:testapp/widgets/new_user_form.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         'staff': (context) => StaffScreen(),
         '/atten': (context) => AttendenceScreen(),
         '/pay': (context) => PaymentScreen(),
+        '/add': (context) => AddNewStaffForm(),
       },
     );
   }

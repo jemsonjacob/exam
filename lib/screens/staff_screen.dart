@@ -66,6 +66,7 @@ class StaffScreen extends StatelessWidget {
           style: TextStyle(color: AppColors.secondarycolor),
         ),
         automaticallyImplyLeading: false,
+
         centerTitle: false,
       ),
 
@@ -73,7 +74,16 @@ class StaffScreen extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: ListView(
           children: [
-            SearchBar(),
+            SearchBar(
+              leading: Icon(Icons.search),
+              hintText: 'Search Staff....',
+              shape: WidgetStateProperty.all(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  side: BorderSide(color: Colors.black),
+                ),
+              ),
+            ),
             const SizedBox(height: 10),
             ListView.separated(
               shrinkWrap: true,
@@ -106,7 +116,9 @@ class StaffScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/add');
+        },
         child: Icon(Icons.add),
       ),
     );
